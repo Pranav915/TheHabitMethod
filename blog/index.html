@@ -1,183 +1,246 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Blog — The Habit Method</title>
-  <meta name="description" content="Explore articles on discipline, habits, routines, and systems that make consistency effortless." />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Habit Method — Discipline Through Systems</title>
+    <!-- SEO -->
+    <meta name="description"
+        content="The Habit Method explores discipline, habits, and routines through simple systems that reduce decision fatigue and build consistency." />
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-  <style>
-    :root {
-      --bg: #f7f6f2;
-      --text: #1f1f1f;
-      --muted: #6b6b6b;
-      --accent: #6b705c;
-      --border: #e0e0dc;
-    }
+    <style>
+        :root {
+            --bg: #f7f6f2;
+            --text: #1f1f1f;
+            --muted: #6b6b6b;
+            --accent: #6b705c;
+            --border: #e0e0dc;
+        }
 
-    * { box-sizing: border-box; }
+        * {
+            box-sizing: border-box;
+        }
 
-    body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      background-color: var(--bg);
-      color: var(--text);
-      line-height: 1.7;
-    }
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+        }
 
-    .container {
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 64px 24px;
-    }
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 64px 24px;
+        }
 
-    header {
-      margin-bottom: 64px;
-    }
+        header {
+            margin-bottom: 64px;
+        }
 
-    .brand {
-      font-size: 14px;
-      letter-spacing: 0.12em;
-      color: var(--muted);
-      margin-bottom: 16px;
-    }
+        .brand {
+            font-size: 14px;
+            letter-spacing: 0.12em;
+            color: var(--muted);
+            margin-bottom: 16px;
+        }
 
-    .brand a {
-      color: inherit;
-      text-decoration: none;
-    }
+        h1 {
+            font-size: 36px;
+            font-weight: 500;
+            margin-bottom: 24px;
+        }
 
-    .brand a:hover {
-      color: var(--accent);
-    }
+        .subtitle {
+            font-size: 18px;
+            color: var(--muted);
+            max-width: 600px;
+        }
 
-    h1 {
-      font-size: 36px;
-      font-weight: 500;
-      margin-bottom: 24px;
-    }
+        hr {
+            border: none;
+            border-top: 1px solid var(--border);
+            margin: 64px 0;
+        }
 
-    .subtitle {
-      font-size: 18px;
-      color: var(--muted);
-      max-width: 600px;
-    }
+        article h2 {
+            font-size: 26px;
+            font-weight: 500;
+            margin-top: 56px;
+            margin-bottom: 16px;
+        }
 
-    hr {
-      border: none;
-      border-top: 1px solid var(--border);
-      margin: 48px 0;
-    }
+        article p {
+            margin-bottom: 20px;
+            font-size: 17px;
+        }
 
-    .blog-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
+        blockquote {
+            border-left: 3px solid var(--accent);
+            padding-left: 16px;
+            margin: 32px 0;
+            color: var(--muted);
+            font-style: italic;
+        }
 
-    .blog-list li {
-      margin-bottom: 40px;
-    }
+        ul {
+            padding-left: 20px;
+            margin-bottom: 32px;
+        }
 
-    .blog-list a {
-      text-decoration: none;
-      color: inherit;
-      display: block;
-    }
+        li {
+            margin-bottom: 10px;
+        }
 
-    .blog-list h2 {
-      font-size: 22px;
-      font-weight: 500;
-      margin: 0 0 8px 0;
-      transition: color 0.2s ease;
-    }
+        .sources {
+            font-size: 15px;
+            color: var(--muted);
+        }
 
-    .blog-list a:hover h2 {
-      color: var(--accent);
-    }
+        footer {
+            margin-top: 96px;
+            font-size: 14px;
+            color: var(--muted);
+            text-align: center;
+        }
 
-    .blog-list p {
-      font-size: 16px;
-      color: var(--muted);
-      margin: 0;
-    }
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 28px;
+            }
 
-    footer {
-      margin-top: 96px;
-      font-size: 14px;
-      color: var(--muted);
-      text-align: center;
-    }
-
-    @media (max-width: 600px) {
-      h1 { font-size: 28px; }
-      .blog-list h2 { font-size: 20px; }
-    }
-  </style>
+            article h2 {
+                font-size: 22px;
+            }
+        }
+    </style>
 </head>
 
 <body>
-  <div class="container">
+    <div class="container">
 
-    <header>
-      <div class="brand"><a href="../index.html">THE HABIT METHOD</a></div>
-      <h1>Blog</h1>
-      <p class="subtitle">
-        Ideas on discipline, habits, and systems that make consistency effortless.
-      </p>
-    </header>
+        <header>
+            <div class="brand">THE HABIT METHOD · <a href="blog/index.html"
+                    style="color: var(--accent); text-decoration: none;">Blog</a></div>
+            <h1>How Disciplined People Reduce Daily Decisions</h1>
+            <p class="subtitle">
+                Discipline is not built through motivation or force.
+                It is built by reducing daily decisions and designing routines that make consistency easier.
+            </p>
+        </header>
 
-    <ul class="blog-list">
+        <article>
 
-      <li>
-        <a href="reduce-daily-decisions.html">
-          <h2>How Disciplined People Reduce Daily Decisions</h2>
-          <p>Discipline is not about more willpower. It's about fewer decisions.</p>
-        </a>
-      </li>
+            <p>
+                Discipline is often misunderstood. Many people believe disciplined individuals are more motivated
+                or mentally stronger. But in reality, disciplined people rely on something far more practical:
+                fewer decisions.
+            </p>
 
-      <li>
-        <a href="daily-routine-autopilot.html">
-          <h2>The Daily Routine That Runs on Autopilot</h2>
-          <p>How to design a morning and evening routine that requires zero motivation.</p>
-        </a>
-      </li>
+            <p>
+                Instead of negotiating with themselves throughout the day, they design their routines in advance.
+                This removes emotional decision-making and conserves mental energy for what truly matters.
+            </p>
 
-      <li>
-        <a href="consistency-over-intensity.html">
-          <h2>Consistency Over Intensity</h2>
-          <p>Why showing up every day beats occasional bursts of effort.</p>
-        </a>
-      </li>
+            <h2>The hidden cost of too many decisions</h2>
 
-      <li>
-        <a href="habit-systems-over-motivation.html">
-          <h2>Habit Systems Over Motivation</h2>
-          <p>Motivation fades. Systems stay. How to build habits that don't depend on how you feel.</p>
-        </a>
-      </li>
+            <p>
+                Every day is filled with small choices: when to wake up, what to eat, when to work, when to rest.
+                Individually, these decisions seem insignificant. Collectively, they drain cognitive energy.
+            </p>
 
-      <li>
-        <a href="non-negotiable-routines.html">
-          <h2>The Power of Non-Negotiable Routines</h2>
-          <p>What happens when you stop asking yourself "should I?" and simply do.</p>
-        </a>
-      </li>
+            <p>
+                Psychological research refers to this phenomenon as <strong>decision fatigue</strong>.
+                As decisions accumulate, the quality of judgment and self-control declines.
+            </p>
 
-      <li>
-        <a href="30-day-discipline-reset.html">
-          <h2>The 30-Day Discipline Reset</h2>
-          <p>A simple framework to rebuild discipline from scratch in one month.</p>
-        </a>
-      </li>
+            <blockquote>
+                When mental energy is depleted, people default to the easiest available option.
+            </blockquote>
 
-    </ul>
+            <h2>Why decision fatigue weakens discipline</h2>
 
-    <footer>
-      © The Habit Method · Discipline through systems
-    </footer>
-  </div>
+            <p>
+                Discipline fails when it depends on repeated emotional choices.
+                Questions like “Should I do this today?” introduce uncertainty.
+                Emotions fluctuate, but systems remain stable.
+            </p>
+
+            <p>
+                Disciplined people eliminate these questions entirely.
+                They decide once, then follow the structure.
+            </p>
+
+            <h2>Deciding once instead of deciding daily</h2>
+
+            <p>
+                One of the most effective discipline strategies is deciding in advance.
+                Instead of asking whether to act, the action becomes automatic.
+            </p>
+
+            <ul>
+                <li>Workouts happen at a fixed time</li>
+                <li>Meals follow a simple pattern</li>
+                <li>Work begins with a defined ritual</li>
+            </ul>
+
+            <p>
+                When decisions are removed, action requires less effort.
+                Consistency becomes a byproduct of structure.
+            </p>
+
+            <h2>How routines remove daily negotiation</h2>
+
+            <p>
+                Routines are not restrictive. They reduce friction.
+                By removing negotiation, routines protect discipline from emotional volatility.
+            </p>
+
+            <p>
+                Predictable structure allows attention to be directed toward meaningful work,
+                rather than wasted on internal debate.
+            </p>
+
+            <h2>Discipline is designed, not felt</h2>
+
+            <p>
+                Discipline is not a personality trait.
+                It is the result of deliberate design.
+            </p>
+
+            <blockquote>
+                Discipline is not something you feel. It is something you design.
+            </blockquote>
+
+            <p>
+                Reducing decisions is one of the simplest and most powerful ways to strengthen discipline.
+                When action becomes easier, consistency follows naturally.
+            </p>
+
+            <hr>
+
+            <div class="sources">
+                <strong>Sources & influences</strong>
+                <ul>
+                    <li>Roy F. Baumeister — Research on decision fatigue</li>
+                    <li>James Clear — <em>Atomic Habits</em></li>
+                    <li>Cal Newport — <em>Deep Work</em></li>
+                    <li>Daniel Kahneman — <em>Thinking, Fast and Slow</em></li>
+                    <li>BJ Fogg — <em>Tiny Habits</em></li>
+                </ul>
+            </div>
+
+        </article>
+
+        <footer>
+            © The Habit Method · Discipline through systems
+        </footer>
+    </div>
 </body>
+
 </html>
