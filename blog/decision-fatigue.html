@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>What Decision Fatigue Is — And Why It Matters | The Habit Method</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="A deep, practical essay on decision fatigue, why discipline fails, and how reducing decisions creates consistency." />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Inter:wght@300;400;500&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --text: #1a1a1a;
+            --muted: #5a5a5a;
+            --light: #e8e8e8;
+            --bg: #faf9f7;
+            --bg-alt: #f3f2ef;
+            --accent: #2d4a3e;
+            --accent-light: #3d6a54;
+            --warm: #c9a962;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: 'Inter', system-ui, sans-serif;
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        /* Subtle grain texture */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            opacity: 0.03;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+        }
+
+        /* Reading Progress Bar */
+        .progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent), var(--warm));
+            width: 0%;
+            z-index: 1000;
+            transition: width 0.1s ease-out;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding: 24px 0;
+            background: rgba(250, 249, 247, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 20px;
+            font-weight: 500;
+            color: var(--text);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+        }
+
+        .nav-links a {
+            font-size: 14px;
+            font-weight: 400;
+            color: var(--muted);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .container-wide {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+
+        /* Article Header */
+        .article-header {
+            padding: 160px 0 80px;
+            text-align: center;
+        }
+
+        .article-meta {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 32px;
+        }
+
+        .article-tag {
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--accent);
+            background: rgba(45, 74, 62, 0.08);
+            padding: 8px 16px;
+            border-radius: 24px;
+        }
+
+        .article-date {
+            font-size: 14px;
+            color: var(--muted);
+        }
+
+        .article-header h1 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: clamp(36px, 5vw, 52px);
+            font-weight: 400;
+            line-height: 1.2;
+            margin-bottom: 24px;
+            letter-spacing: -0.02em;
+        }
+
+        .article-subtitle {
+            font-size: 20px;
+            color: var(--muted);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        /* Article Content */
+        .article-content {
+            padding: 0 0 80px;
+        }
+
+        .article-content p {
+            font-size: 18px;
+            margin-bottom: 28px;
+            color: var(--text);
+        }
+
+        .article-content p.lead {
+            font-size: 21px;
+            color: var(--muted);
+            line-height: 1.8;
+        }
+
+        .article-content h2 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 32px;
+            font-weight: 500;
+            margin-top: 72px;
+            margin-bottom: 28px;
+            letter-spacing: -0.01em;
+        }
+
+        .article-content ul,
+        .article-content ol {
+            padding-left: 24px;
+            margin-bottom: 32px;
+        }
+
+        .article-content li {
+            font-size: 18px;
+            margin-bottom: 12px;
+            color: var(--text);
+        }
+
+        .article-content li::marker {
+            color: var(--accent);
+        }
+
+        /* Callout / Blockquote */
+        .callout {
+            background: linear-gradient(135deg, rgba(45, 74, 62, 0.06) 0%, rgba(201, 169, 98, 0.04) 100%);
+            border-left: 4px solid var(--accent);
+            border-radius: 0 16px 16px 0;
+            padding: 32px 40px;
+            margin: 48px 0;
+            font-size: 20px;
+            font-style: italic;
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        .callout strong {
+            color: var(--accent);
+            font-style: normal;
+        }
+
+        /* Divider */
+        .divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--light), transparent);
+            margin: 64px 0;
+        }
+
+        /* Key Insight Box */
+        .insight-box {
+            background: var(--bg-alt);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 48px 0;
+            text-align: center;
+        }
+
+        .insight-box p {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 24px;
+            font-weight: 500;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        .insight-box p strong {
+            color: var(--accent);
+        }
+
+        /* Next Essay CTA */
+        .next-essay {
+            background: var(--bg-alt);
+            border-radius: 20px;
+            padding: 48px;
+            margin-top: 80px;
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.4s ease;
+            border: 1px solid transparent;
+        }
+
+        .next-essay:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.06);
+            border-color: rgba(0, 0, 0, 0.04);
+        }
+
+        .next-essay-label {
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 8px;
+        }
+
+        .next-essay h3 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 24px;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+
+        .next-essay p {
+            font-size: 15px;
+            color: var(--muted);
+            margin: 0;
+        }
+
+        .next-essay-arrow {
+            width: 48px;
+            height: 48px;
+            background: rgba(45, 74, 62, 0.08);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: all 0.3s ease;
+        }
+
+        .next-essay:hover .next-essay-arrow {
+            background: var(--accent);
+            color: #fff;
+        }
+
+        .next-essay-arrow svg {
+            width: 20px;
+            height: 20px;
+            color: var(--accent);
+        }
+
+        .next-essay:hover .next-essay-arrow svg {
+            color: #fff;
+        }
+
+        /* Footer */
+        footer {
+            padding: 80px 0;
+            background: var(--bg-alt);
+            border-top: 1px solid rgba(0, 0, 0, 0.04);
+            margin-top: 80px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-brand {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 24px;
+            font-weight: 500;
+            color: var(--text);
+            margin-bottom: 8px;
+        }
+
+        .footer-tagline {
+            font-size: 14px;
+            color: var(--muted);
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 32px;
+        }
+
+        .footer-links a {
+            font-size: 14px;
+            color: var(--muted);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+
+        .footer-bottom {
+            margin-top: 48px;
+            padding-top: 32px;
+            border-top: 1px solid rgba(0, 0, 0, 0.06);
+            text-align: center;
+            font-size: 13px;
+            color: var(--muted);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .article-header {
+                padding: 140px 0 60px;
+            }
+
+            .article-header h1 {
+                font-size: 32px;
+            }
+
+            .callout {
+                padding: 24px 28px;
+                font-size: 18px;
+            }
+
+            .next-essay {
+                flex-direction: column;
+                text-align: center;
+                padding: 32px;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                gap: 32px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="progress" id="progress"></div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container-wide">
+            <a href="../index.html" class="logo">The Habit Method</a>
+            <div class="nav-links">
+                <a href="../index.html#philosophy">Philosophy</a>
+                <a href="index.html">Essays</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Article Header -->
+    <header class="article-header">
+        <div class="container">
+            <div class="article-meta">
+                <span class="article-tag">Decision Fatigue</span>
+                <span class="article-date">February 2026</span>
+            </div>
+            <h1>What Decision Fatigue Is — And Why It Matters</h1>
+            <p class="article-subtitle">
+                Discipline doesn't usually fail loudly. It fails quietly, through small decisions that drain your mental
+                energy before you even notice.
+            </p>
+        </div>
+    </header>
+
+    <!-- Article Content -->
+    <article class="article-content">
+        <div class="container">
+
+            <p class="lead">
+                Most people assume discipline breaks when motivation runs out. But motivation is rarely the first thing
+                to go. What disappears earlier—and more predictably—is mental clarity.
+            </p>
+
+            <p>
+                By the time people skip a workout, delay work, or abandon routines, they've often already made dozens of
+                small decisions that drained their ability to choose deliberately.
+            </p>
+
+            <p>
+                This is not a character flaw.<br />
+                It's a cognitive limit.
+            </p>
+
+            <div class="callout">
+                That limit is called <strong>decision fatigue</strong>.
+            </div>
+
+            <h2>What decision fatigue actually is</h2>
+
+            <p>
+                Decision fatigue refers to the gradual decline in the quality of decisions after a long session of
+                decision-making. Psychological research has consistently shown that:
+            </p>
+
+            <ul>
+                <li>Decision-making consumes mental energy</li>
+                <li>Self-control and decision-making draw from the same pool</li>
+                <li>As that pool depletes, people default to easier, familiar, or impulsive choices</li>
+            </ul>
+
+            <p>In practical terms, this means:</p>
+
+            <ul>
+                <li>The more choices you make, the harder it becomes to act intentionally</li>
+                <li>The harder it becomes to resist short-term comfort</li>
+                <li>The more likely you are to postpone, simplify, or avoid effort altogether</li>
+            </ul>
+
+            <h2>Why modern life makes decision fatigue unavoidable</h2>
+
+            <p>
+                A few decades ago, daily life was more constrained. Fewer choices. Fewer inputs. More predictable
+                routines. Today, the opposite is true.
+            </p>
+
+            <p>
+                Before noon, most people have already decided when to wake up, what to wear, what to eat, which
+                notifications to respond to, what to prioritize, and whether to exercise now or later.
+            </p>
+
+            <p>
+                None of these decisions are large on their own. But together, they create a steady cognitive drain.
+            </p>
+
+            <div class="callout">
+                The problem is not that we make bad decisions early.<br />
+                <strong>The problem is that we keep having to decide at all.</strong>
+            </div>
+
+            <h2>Why decision fatigue looks like a motivation problem</h2>
+
+            <p>
+                From the outside, decision fatigue often looks like laziness or lack of discipline. From the inside, it
+                feels like:
+            </p>
+
+            <ul>
+                <li>"I'll do it later."</li>
+                <li>"I don't have the energy today."</li>
+                <li>"I know what I should do, but I can't start."</li>
+            </ul>
+
+            <p>
+                By the evening, when most discipline failures occur, people are not unmotivated—they are mentally
+                exhausted from choosing.
+            </p>
+
+            <h2>The hidden cost: daily negotiation</h2>
+
+            <p>
+                Without clear defaults, people repeatedly negotiate with themselves:
+            </p>
+
+            <ul>
+                <li>Should I work out today?</li>
+                <li>Should I start now or later?</li>
+                <li>Do I really need to do this today?</li>
+            </ul>
+
+            <p>
+                Each question invites debate. Each debate consumes energy.
+            </p>
+
+            <div class="insight-box">
+                <p>Disciplined people don't win these debates more often.<br /><strong>They avoid having them.</strong>
+                </p>
+            </div>
+
+            <h2>The real insight</h2>
+
+            <p>
+                Discipline is not strengthened by making better decisions.
+            </p>
+
+            <p>
+                <strong>It is strengthened by needing fewer decisions.</strong>
+            </p>
+
+            <p>
+                When decisions are reduced, action becomes lighter. When action becomes lighter, consistency becomes
+                possible.
+            </p>
+
+            <div class="divider"></div>
+
+            <h2>What comes next</h2>
+
+            <p>
+                Understanding decision fatigue explains why discipline breaks. But it doesn't yet explain how to fix it.
+            </p>
+
+            <p>
+                The solution isn't better planning or stronger motivation. It's creating defaults—pre-decided choices
+                that remove daily negotiation.
+            </p>
+
+            <!-- Next Essay CTA -->
+            <a href="create-defaults.html" class="next-essay">
+                <div class="next-essay-content">
+                    <div class="next-essay-label">Next Essay</div>
+                    <h3>How to Create Defaults That Remove Decisions</h3>
+                    <p>Learn how pre-decided choices make discipline sustainable.</p>
+                </div>
+                <div class="next-essay-arrow">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                        stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                </div>
+            </a>
+
+        </div>
+    </article>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container-wide">
+            <div class="footer-content">
+                <div>
+                    <div class="footer-brand">The Habit Method</div>
+                    <div class="footer-tagline">Discipline through systems</div>
+                </div>
+                <div class="footer-links">
+                    <a href="../index.html">Home</a>
+                    <a href="index.html">Essays</a>
+                    <a href="../privacy-policy.html">Privacy</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                © 2026 The Habit Method. Built for those who believe in systems over motivation.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Reading Progress Script -->
+    <script>
+        const progress = document.getElementById("progress");
+        window.addEventListener("scroll", () => {
+            const scrollTop = document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            progress.style.width = (scrollTop / height) * 100 + "%";
+        });
+    </script>
+
+</body>
+
+</html>
