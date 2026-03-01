@@ -3,10 +3,10 @@
 
 <head>
     <meta charset="UTF-8" />
-    <title>How to Apply Defaults to Work | The Habit Method</title>
+    <title>How to Apply Defaults to Sleep | The Habit Method</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description"
-        content="Make focused work predictable, not emotional. How to apply defaults to your workday so deep work stops being a daily negotiation." />
+        content="Make rest predictable, not reactive. How to apply defaults to sleep so bedtime stops being a nightly negotiation." />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -41,7 +41,6 @@
             overflow-x: hidden;
         }
 
-        /* Subtle grain texture */
         body::before {
             content: '';
             position: fixed;
@@ -54,7 +53,6 @@
             background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
         }
 
-        /* Reading Progress Bar */
         .progress {
             position: fixed;
             top: 0;
@@ -66,7 +64,6 @@
             transition: width 0.1s ease-out;
         }
 
-        /* Navigation */
         nav {
             position: fixed;
             top: 0;
@@ -119,14 +116,12 @@
             padding: 0 32px;
         }
 
-        /* Article Layout */
         .article-wrapper {
             max-width: 720px;
             margin: 0 auto;
             padding: 0 32px;
         }
 
-        /* Article Header */
         .article-header {
             padding: 160px 0 72px;
             text-align: center;
@@ -174,7 +169,6 @@
             border-top: 1px solid var(--light);
         }
 
-        /* Article Body */
         .article-body {
             padding: 72px 0 120px;
         }
@@ -203,8 +197,7 @@
             letter-spacing: -0.01em;
         }
 
-        .article-body ul,
-        .article-body ol {
+        .article-body ul {
             padding-left: 24px;
             margin-bottom: 32px;
         }
@@ -219,7 +212,6 @@
             color: var(--accent);
         }
 
-        /* Callout */
         .callout {
             background: linear-gradient(135deg, rgba(45, 74, 62, 0.06) 0%, rgba(201, 169, 98, 0.04) 100%);
             border-left: 4px solid var(--accent);
@@ -237,7 +229,6 @@
             color: var(--accent);
         }
 
-        /* Insight Box */
         .insight-box {
             background: var(--bg-alt);
             border-radius: 20px;
@@ -258,7 +249,6 @@
             color: var(--accent);
         }
 
-        /* Default Cards */
         .default-cards {
             display: flex;
             flex-direction: column;
@@ -315,7 +305,6 @@
             color: var(--muted);
         }
 
-        /* Section divider */
         .divider {
             height: 1px;
             background: linear-gradient(90deg, transparent, var(--light), transparent);
@@ -349,56 +338,6 @@
             gap: 14px;
         }
 
-        .next-essay {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-            text-decoration: none;
-            gap: 6px;
-            flex: 1;
-        }
-
-        .next-essay-label {
-            font-size: 11px;
-            font-weight: 500;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            color: var(--muted);
-        }
-
-        .next-essay-title {
-            font-family: 'Playfair Display', Georgia, serif;
-            font-size: 18px;
-            font-weight: 500;
-            color: var(--text);
-            text-align: right;
-            transition: color 0.3s ease;
-        }
-
-        .next-essay:hover .next-essay-title {
-            color: var(--accent);
-        }
-
-        .next-essay-arrow {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background: rgba(45, 74, 62, 0.08);
-            border-radius: 50%;
-            color: var(--accent);
-            flex-shrink: 0;
-            transition: background 0.3s ease, transform 0.3s ease;
-        }
-
-        .next-essay:hover .next-essay-arrow {
-            background: var(--accent);
-            color: #fff;
-            transform: translateX(4px);
-        }
-
-        /* Footer */
         footer {
             padding: 80px 0;
             background: var(--bg-alt);
@@ -449,7 +388,6 @@
             color: var(--muted);
         }
 
-        /* Responsive */
         @media (max-width: 900px) {
             .footer-content {
                 flex-direction: column;
@@ -488,14 +426,6 @@
                 flex-direction: column;
                 align-items: flex-start;
             }
-
-            .next-essay {
-                align-items: flex-start;
-            }
-
-            .next-essay-title {
-                text-align: left;
-            }
         }
     </style>
 </head>
@@ -518,15 +448,15 @@
     <!-- Article Header -->
     <header class="article-header">
         <div class="article-wrapper">
-            <span class="article-label">Work & Focus</span>
-            <h1>How to Apply Defaults to Work</h1>
-            <p class="article-subtitle">Make focused work predictable, not emotional.</p>
+            <span class="article-label">Sleep & Recovery</span>
+            <h1>How to Apply Defaults to Sleep</h1>
+            <p class="article-subtitle">Make rest predictable, not reactive.</p>
             <div class="article-meta-bar">
-                <span>Essay 06</span>
+                <span>Essay 07</span>
                 <span>·</span>
                 <span>Mar 2026</span>
                 <span>·</span>
-                <span>8 min read</span>
+                <span>7 min read</span>
             </div>
         </div>
     </header>
@@ -535,206 +465,173 @@
     <article class="article-body">
         <div class="article-wrapper">
 
-            <p class="lead">Most people don't struggle with work because they lack ambition. They struggle because every
-                day requires too many decisions.</p>
+            <p class="lead">Most people don't struggle with sleep because they lack information. They struggle because
+                bedtime is negotiable.</p>
 
-            <p>When to start. What to work on first. How long to focus. When to take a break. When to stop.</p>
+            <p>They intend to sleep earlier. They plan to wind down. They promise to stop working sooner.</p>
 
-            <p>Each one drains mental energy.</p>
-
-            <p>By the time meaningful work begins, clarity is already reduced.</p>
-
-            <p>The problem is not laziness. It is decision fatigue applied to work.</p>
-
-            <p>If your workday depends on how you feel, it will fluctuate with your mood.</p>
-
-            <p>The solution is not stronger motivation.</p>
-
-            <p>It is structure.</p>
-
-            <h2>Why work collapses in the afternoon</h2>
-
-            <p>Work often starts with intention.</p>
-
-            <p>You open your laptop. You review tasks. You plan your day.</p>
-
-            <p>But then micro-decisions begin:</p>
+            <p>But when the evening arrives, small decisions take over:</p>
 
             <ul>
-                <li>Should I check email first?</li>
-                <li>Should I respond to this message?</li>
-                <li>Should I start the hard task now or later?</li>
+                <li>One more video.</li>
+                <li>One more email.</li>
+                <li>One more scroll.</li>
             </ul>
 
-            <p>Each decision seems small. Together, they fragment attention.</p>
-
-            <p>By mid-afternoon, the question appears:</p>
+            <p>Each choice feels minor. Together, they push sleep later.</p>
 
             <div class="callout">
-                "I'll focus properly tomorrow."
+                Sleep collapses not because of ignorance, but because of <strong>negotiation</strong>.
             </div>
 
-            <p>This is not a time-management problem.</p>
+            <p>The solution is not discipline at midnight.</p>
 
-            <p>It is a structure problem.</p>
+            <p>It is structure before the night begins.</p>
 
-            <h2>The Three Defaults That Make Work Predictable</h2>
+            <h2>Why sleep becomes unstable</h2>
 
-            <p>These are not productivity tricks. They are structural commitments.</p>
+            <p>Evenings are decision-heavy. Throughout the day, mental energy is spent on work, messages,
+                responsibilities, and small choices.</p>
+
+            <p>By night, clarity is reduced.</p>
+
+            <p>This is when people rely on willpower.</p>
+
+            <p>Willpower is weakest when it is needed most.</p>
+
+            <p>If sleep depends on how you feel at 11 PM, it will fluctuate.</p>
+
+            <p>The goal is not to fight fatigue with effort. It is to remove the decision entirely.</p>
+
+            <h2>The Three Defaults That Stabilize Sleep</h2>
+
+            <p>These are not optimization techniques. They are structural anchors.</p>
 
             <div class="default-cards">
 
                 <div class="default-card">
                     <span class="default-card-label">Default 1</span>
-                    <h3>Fix your start time</h3>
-                    <p>The most important work decision is not what you do. It is when you begin.</p>
-                    <p>A fixed start time:</p>
+                    <h3>Fix the shutdown time</h3>
+                    <p>Most people try to fix bedtime. But bedtime is influenced by what happens before it.</p>
+                    <p>Instead, fix the shutdown time. Shutdown means:</p>
                     <ul>
-                        <li>Reduces procrastination</li>
-                        <li>Eliminates negotiation</li>
-                        <li>Signals transition into focused mode</li>
+                        <li>Work ends</li>
+                        <li>Devices move away</li>
+                        <li>Tomorrow is briefly planned</li>
                     </ul>
-                    <p>Examples: Work begins at 9:30 AM, regardless of mood. First deep work block starts 30 minutes
-                        after arrival. Laptop opens at the same time daily.</p>
-                    <p>When the start time is fixed, delay becomes unusual. You are not asking when to begin. You are
-                        beginning because it is time.</p>
+                    <p>Examples: Shutdown begins at 10:00 PM. Laptop closes at 9:30 PM. Work-related tasks stop at a
+                        fixed hour.</p>
+                    <p>When shutdown is fixed, bedtime becomes easier. You are not deciding when to stop. The clock
+                        decides.</p>
                 </div>
 
                 <div class="default-card">
                     <span class="default-card-label">Default 2</span>
-                    <h3>Decide the first task the day before</h3>
-                    <p>Most procrastination happens at the starting line. The brain resists ambiguity.</p>
-                    <p>If you begin your day by deciding what matters, you waste clarity.</p>
-                    <p>Instead, at the end of each day, define:</p>
+                    <h3>Define a minimum wind-down sequence</h3>
+                    <p>Evenings fail when they are undefined. You move from task to task until exhaustion takes over.
+                    </p>
+                    <p>Create a simple sequence that repeats nightly. Examples:</p>
                     <ul>
-                        <li>The first task for tomorrow</li>
-                        <li>The minimum progress required</li>
-                        <li>The expected duration</li>
+                        <li>Shower → light reading → bed</li>
+                        <li>Prepare clothes → journal → lights out</li>
+                        <li>Stretch → dim lights → bed</li>
                     </ul>
-                    <p>When tomorrow begins, you do not choose. You execute.</p>
-                    <p>Clarity should exist before the day starts, not during it.</p>
+                    <p>The sequence does not need to be elaborate. It needs to be predictable.</p>
+                    <p>When the order is fixed, the brain transitions without debate.</p>
                 </div>
 
                 <div class="default-card">
                     <span class="default-card-label">Default 3</span>
-                    <h3>Define a fixed focus block length</h3>
-                    <p>Work fails when it becomes undefined. You intend to "work seriously," but the duration is
-                        unclear.</p>
-                    <p>Examples:</p>
+                    <h3>Anchor wake-up time</h3>
+                    <p>Many people try to control sleep by adjusting bedtime alone. But wake-up time stabilizes rhythm
+                        more effectively.</p>
+                    <p>A fixed wake-up time:</p>
                     <ul>
-                        <li>45-minute focus block</li>
-                        <li>60-minute deep work session</li>
-                        <li>Two blocks before lunch, one after</li>
+                        <li>Reduces oversleeping</li>
+                        <li>Signals consistency to the body</li>
+                        <li>Encourages earlier sleep naturally</li>
                     </ul>
-                    <p>When the duration is fixed: you commit to the block, not the mood. Distractions feel like
-                        interruptions, not alternatives. Stopping becomes structured, not reactive.</p>
-                    <p>You are not promising endless productivity. You are committing to one defined unit.</p>
+                    <p>When wake-up fluctuates wildly, sleep timing drifts.</p>
+                    <p>Consistency in the morning creates stability at night.</p>
                 </div>
 
             </div>
 
-            <h2>Why this works better than productivity systems</h2>
+            <h2>Why this works better than sleep "optimization"</h2>
 
-            <p>Many productivity systems add layers: more tools, more apps, more tracking.</p>
+            <p>Modern advice often focuses on supplements, temperature adjustments, advanced tracking, and perfect
+                routines.</p>
 
-            <p>But complexity increases decision load.</p>
+            <p>These can help.</p>
 
-            <p>The goal is not to manage work more aggressively.</p>
-
-            <p>The goal is to remove unnecessary choices.</p>
-
-            <p>A simple structure — fixed start, pre-decided first task, defined focus block — outperforms elaborate
-                systems that require daily redesign.</p>
-
-            <h2>The real enemy: reactive work</h2>
-
-            <p>Reactive work feels productive.</p>
-
-            <p>You respond quickly. You clear messages. You move between tasks.</p>
-
-            <p>But reactive work trains distraction.</p>
-
-            <p>Without structure, your day belongs to notifications, other people's urgency, and immediate discomfort.
-            </p>
+            <p>But without structure, they don't sustain.</p>
 
             <div class="callout">
-                Defaults protect your attention. They create boundaries <strong>without rigidity</strong>.
+                If bedtime is negotiable, optimization becomes <strong>irrelevant</strong>.
             </div>
+
+            <p>Structure creates stability. Optimization refines it later.</p>
+
+            <h2>The real enemy: reactive evenings</h2>
+
+            <p>Reactive evenings look like freedom. You relax, browse, respond casually.</p>
+
+            <p>But without boundaries, evenings extend indefinitely.</p>
+
+            <p>Fatigue reduces clarity. Reduced clarity leads to later sleep. Later sleep weakens tomorrow.</p>
+
+            <p>Defaults interrupt this cycle. They create a boundary without rigidity.</p>
 
             <h2>The mistake most people make</h2>
 
-            <p>They try to optimize too early.</p>
-
-            <p>Longer focus blocks. More hours. Stricter rules.</p>
-
-            <p>When stress increases, the system collapses.</p>
-
-            <p>A good work default survives:</p>
+            <p>They attempt extreme changes:</p>
 
             <ul>
-                <li>Low energy</li>
-                <li>Busy periods</li>
-                <li>Unplanned interruptions</li>
-                <li>Imperfect days</li>
+                <li>Sleeping two hours earlier immediately</li>
+                <li>Strict no-device rules overnight</li>
+                <li>Overly complex routines</li>
             </ul>
+
+            <p>When disruption occurs, the system collapses.</p>
+
+            <p>A good sleep default survives: social events, busy days, occasional late nights, minor stress.</p>
 
             <div class="insight-box">
-                <p>If your structure only works in ideal conditions,<br>it is too ambitious.<br><strong>Stability before
-                        optimization.</strong></p>
+                <p>The goal is not perfection.<br><strong>It is stability.</strong></p>
             </div>
 
-            <h2>Work as a repeated pattern, not a daily reinvention</h2>
+            <h2>Sleep as preparation, not recovery</h2>
 
-            <p>Many people reinvent their workday every morning — different priorities, different timing, different
-                structure.</p>
+            <p>Many people treat sleep as recovery from chaos. It is more effective to treat sleep as preparation.</p>
 
-            <p>This feels flexible. But it drains clarity.</p>
+            <p>When shutdown is structured, you enter the next day with clarity. When shutdown is reactive, you begin
+                depleted.</p>
 
-            <p>When work follows a repeated pattern, attention stabilizes. You know when you focus, when you respond,
-                when you stop.</p>
-
-            <p>Predictability reduces friction.</p>
-
-            <h2>The role of stopping</h2>
-
-            <p>Defaults are not only about starting. They are about ending.</p>
-
-            <p>A fixed shutdown time:</p>
-
-            <ul>
-                <li>Protects energy</li>
-                <li>Reduces spillover stress</li>
-                <li>Prevents burnout</li>
-            </ul>
-
-            <p>When stopping is structured, rest feels legitimate. Without it, work leaks into the evening. And the next
-                day begins depleted.</p>
+            <p>Sleep discipline protects tomorrow's decisions.</p>
 
             <h2>A practical starting structure</h2>
 
-            <p>If you want something simple:</p>
+            <p>Begin simply:</p>
 
             <ul>
-                <li>Choose a fixed start time.</li>
-                <li>Decide tomorrow's first task today.</li>
-                <li>Work in two 45-minute blocks before lunch.</li>
-                <li>Define one 45-minute block in the afternoon.</li>
-                <li>Choose a consistent shutdown time.</li>
+                <li>Choose a fixed shutdown time.</li>
+                <li>Define a 3-step wind-down sequence.</li>
+                <li>Fix your wake-up time.</li>
+                <li>Maintain this for four weeks.</li>
+                <li>Do not optimize during this period.</li>
             </ul>
 
-            <p>Do not expand this yet. Let it stabilize for four weeks.</p>
+            <p>Stability first. Refinement later.</p>
 
-            <p>Consistency first. Refinement later.</p>
+            <h2>What changes when sleep becomes a default</h2>
 
-            <h2>What this changes</h2>
+            <p>You stop asking: <em>"Should I sleep now?"</em></p>
 
-            <p>You no longer ask: <em>"Do I feel ready to focus?"</em></p>
+            <p>You recognize: <em>"This is when I close the day."</em></p>
 
-            <p>You think: <em>"This is the block I'm in."</em></p>
+            <p>Negotiation disappears. Rest becomes predictable.</p>
 
-            <p>The decision disappears.</p>
-
-            <p>Attention strengthens not because you forced it, but because you protected it.</p>
+            <p>And when rest becomes predictable, discipline strengthens across every domain.</p>
 
             <h2>Where this fits in the system</h2>
 
@@ -745,14 +642,15 @@
                 <li>Defaults remove negotiation.</li>
                 <li>Motivation fluctuates.</li>
                 <li>Structure creates freedom.</li>
-                <li>Fitness becomes automatic through defaults.</li>
-                <li>Work becomes focused through predictable blocks.</li>
+                <li>Fitness becomes automatic.</li>
+                <li>Work becomes predictable.</li>
+                <li>Sleep becomes stable.</li>
             </ul>
 
-            <p>The same principle applies elsewhere. In the next essay, we apply defaults to sleep.</p>
+            <p>This is not about intensity. It is about reducing unnecessary decisions.</p>
 
             <div class="insight-box">
-                <p>Discipline is not intensity.<br><strong>It is structured repetition.</strong></p>
+                <p>Discipline is not built through pressure.<br><strong>It is built through structure.</strong></p>
             </div>
 
             <div class="divider"></div>
@@ -764,17 +662,6 @@
                         <path stroke-linecap="round" stroke-linejoin="round" d="M7 16l-4-4m0 0l4-4m-4 4h18" />
                     </svg>
                     Back to all essays
-                </a>
-
-                <a href="../apply-defaults-to-sleep/" class="next-essay">
-                    <span class="next-essay-label">Next Essay</span>
-                    <span class="next-essay-title">How to Apply Defaults to Sleep</span>
-                    <span class="next-essay-arrow">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                            stroke-width="2" width="18" height="18">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                        </svg>
-                    </span>
                 </a>
             </div>
 
